@@ -3,6 +3,7 @@
 
 
 ### Step 1: Connect to AWS EC2 Instance via SSH
+#### configure
 ```bash
 ssh -i yourkey.pem ec2-user@publicip
 ```
