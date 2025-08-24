@@ -2,35 +2,34 @@
 
 
 
-### Step 1: Connect to AWS EC2 Instance via SSH
-#### configure
+### Step 1: Connect to the EC2 instance with your private key
 ```bash
 ssh -i yourkey.pem ec2-user@publicip
 ```
 
-### Step 2: Update the instance and install Docker
+### Step 2: Update packages and install Docker
 ```bash
 sudo yum update -y
 sudo yum install -y docker
 ```
 
-### Step 3: Start and enable Docker service
+### Step 3: Start and enable Docker
 ```bash
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-### Step 4: Add user to the Docker group for non-root access
+### Step 4: Add user to the Docker group for access without root privileges
 ```bash
 sudo usermod -aG docker ec2-user
 ```
 
-### Step 5: Exit and log back in so the changes can take effect
+### Step 5: Sign out and sign back in to apply group changes
 ```bash
 exit
 ```
 
-### Step 6: Connect to AWS EC2 Instance via SSH
+### Step 6: apply group changes
 ```bash
 ssh -i yourkey.pem ec2-user@publicip
 ```
